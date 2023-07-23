@@ -175,11 +175,16 @@ def main(folder: Path):
     for folder in FOLDERS[::-1]:
          handle_folder(folder)
 
-if __name__ == "__main__":
+def run():
     if sys.argv[1]:
         folder_for_scan = Path(sys.argv[1])
         print(f'Start in folder: {folder_for_scan.resolve()}')
         main(folder_for_scan.resolve())
+
+if __name__ == "__main__":
+    run()
+
+
 
 print(f'Images:{JPEG_IMAGES},{JPG_IMAGES},{PNG_IMAGES},{SVG_IMAGES}')
 print(f'Video: {AVI_VIDEO},{MP4_VIDEO},{MOV_VIDEO},{MKV_VIDEO}')
